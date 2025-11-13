@@ -1,5 +1,6 @@
 package com.example.brandy_pr_mob
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -22,8 +23,12 @@ class MainActivity : AppCompatActivity() {
         loginbtn.setOnClickListener {
             val usernameText = username.text.toString()
             if (password.text.toString() == "password") {
-                output.text = "Welcome $usernameText"
-
+                //Connecting with HomeActivity file
+                val intent = Intent(this, HomeActivity::class.java)
+                // Pass the username to HomeActivity
+                intent.putExtra("USERNAME", usernameText)
+                startActivity(intent)
+                finish()
             } else {
                 output.text = "Incorrect Credentials"
             }
