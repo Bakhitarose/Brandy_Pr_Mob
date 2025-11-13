@@ -19,6 +19,8 @@ class MainActivity : AppCompatActivity() {
         val username: EditText = findViewById(R.id.username)
         val password: EditText = findViewById(R.id.password)
         val loginbtn: Button = findViewById(R.id.loginbtn)
+        val goToSignup: TextView = findViewById(R.id.goToSignup)
+
 
         loginbtn.setOnClickListener {
             val usernameText = username.text.toString()
@@ -34,6 +36,13 @@ class MainActivity : AppCompatActivity() {
             } else {
                 output.text = "Incorrect Credentials"
             }
+        }
+
+            //Connecting to the Sign up page
+        goToSignup.setOnClickListener {
+            val intent = Intent(this, SignupActivity::class.java)
+            startActivity(intent)
+            finish()
         }
 
     }

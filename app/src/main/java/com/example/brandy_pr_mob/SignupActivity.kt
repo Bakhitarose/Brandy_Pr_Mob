@@ -22,12 +22,14 @@ class SignupActivity : AppCompatActivity() {
         val goToLogin: TextView = findViewById(R.id.goToLogin)
 
         signupbtn.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, HomeActivity::class.java)
             startActivity(intent)
             finish()
         }
 
         goToLogin.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
             finish()
         }
     }
